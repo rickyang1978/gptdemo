@@ -4,7 +4,7 @@
 
 3) Run command 'cd app'
 
-4) Clone the files in folder 'app'
+4) Clone the files into folder 'app'
 
 5) Edit 'app.py' and replace the 'YOUR-OPENAI-API-KEY' with your api key from openai.com
 
