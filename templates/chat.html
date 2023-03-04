@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with GPT-3.5-TURBO API</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 600px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    form:nth-of-type(2) {
+      margin-top: 50px;
+    }
+
+    .chat-history {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      white-space: pre-line; /* 添加此属性 */
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+    }
+
+    .user-message {
+      color: #4CAF50;
+    }
+
+    .assistant-message {
+      color: #2196F3;
+    }
+
+    .system-message {
+      color: #9e9e9e;
+    }
+
+    .message-role {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chat with GPT-3.5-Turbo API</h1>
+  <div class="chat-history">
+    {% for message in messages %}
+      <div class="chat-message">
+        <span class="message-role">{{ message.role }}:</span>
+        {% if message.role == "user" %}
+          <span class="user-message">{{ message.content }}</span>
+        {% elif message.role == "assistant" %}
+          <span class="assistant-message">{{ message.content }}</span>
+        {% elif message.role == "system" %}
+          <span class="system-message">{{ message.content }}</span>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <form method="POST" action="/chat">
+    <label>Message:</label>
+    <input type="text" name="message" required>
+    <input type="submit" value="Send">
+  </form>
+  <form method="GET" action="/logout">
+    <input type="submit" value="Clear">
+  </form>
+</body>
+</html>
