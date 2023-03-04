@@ -1,13 +1,15 @@
-# Install Docker on your PC or Mac
+1) Install Docker on your PC or Mac
 
-# On your PC or Mac, make a local folder 'app'
+2) On your PC or Mac, make a local folder 'app'
 
-# Run command 'cd app'
+3) Run command 'cd app'
 
-# Edit 'app.py' and replace the 'YOUR-OPENAI-API-KEY' with your api key from openai.com
+4) Clone the files in folder 'app'
 
-# Run command 'docker build -t localgpt:v1 .'
+5) Edit 'app.py' and replace the 'YOUR-OPENAI-API-KEY' with your api key from openai.com
 
-# Run command 'docker run -d -p 8080:5000 localgpt:v1'
+6) Run command 'docker build -t localgpt:v1 .'
 
-# Open 'http://localhost:8080/chat' in browser
+7) Run command 'docker run -d -p 8080:5000 localgpt:v1'
+
+8) Open 'http://localhost:8080/chat' in browser
